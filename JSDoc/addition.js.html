@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: addition.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: addition.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Executes the provided function when the DOM is fully loaded.
  * @callback readyCallback
  */
@@ -14,7 +42,7 @@ $(document).ready(function(callback) {
      * @function addEmployeeOption
      */
     if (getCookie("role") == "it" || getCookie("role") == "chief") {
-        let option = $("<option>");
+        let option = $("&lt;option>");
         option.attr("value", "employees");
         option.text("Employee");
         $(selectType).append(option);
@@ -101,7 +129,7 @@ $(document).ready(function(callback) {
                 // Add the appropriate selection of brands and categories based on the API data
                 $(brandProduct).children().slice(1).remove();
                 for (let brandId in brandsData) {
-                    let option = $("<option>");
+                    let option = $("&lt;option>");
                     option.attr("value", brandId);
                     option.text(brandsData[brandId]);
                     $(brandProduct).append(option);
@@ -109,7 +137,7 @@ $(document).ready(function(callback) {
 
                 $(catProduct).children().slice(1).remove();
                 for (let catId in categoriesData) {
-                    let option = $("<option>");
+                    let option = $("&lt;option>");
                     option.attr("value", catId);
                     option.text(categoriesData[catId]);
                     $(catProduct).append(option);
@@ -128,14 +156,14 @@ $(document).ready(function(callback) {
                 // Add the appropriate selection of stores and products based on the API data
                 $(storeStock).children().slice(1).remove();
                 let storeId = getCookie("storeId");
-                let option = $("<option>");
+                let option = $("&lt;option>");
                 option.attr("value", storeId);
                 option.text(storesData[storeId]);
                 $(storeStock).append(option);
 
                 $(productStock).children().slice(1).remove();
                 for (let productId in productsData) {
-                    let option = $("<option>");
+                    let option = $("&lt;option>");
                     option.attr("value", productId);
                     option.text(productsData[productId]);
                     $(productStock).append(option);
@@ -154,7 +182,7 @@ $(document).ready(function(callback) {
                 // Add the option to select another role if the user is an IT employee
                 if (getCookie("role") == "it") {
                     $(role).children().slice(2).remove();
-                    let option = $("<option>");
+                    let option = $("&lt;option>");
                     option.attr("value", "chief");
                     option.text("Chief");
                     $(role).append(option);
@@ -164,13 +192,13 @@ $(document).ready(function(callback) {
                 $(storeEmployee).children().slice(1).remove();
                 if (getCookie("role") == "chief") {
                     let storeId = getCookie("storeId");
-                    let option = $("<option>");
+                    let option = $("&lt;option>");
                     option.attr("value", storeId);
                     option.text(storesData[storeId]);
                     $(storeEmployee).append(option);
                 } else {
                     for (let storeId in storesData) {
-                        let option = $("<option>");
+                        let option = $("&lt;option>");
                         option.attr("value", storeId);
                         option.text(storesData[storeId]);
                         $(storeEmployee).append(option);
@@ -217,7 +245,7 @@ $(document).ready(function(callback) {
             headers: headers,
         });
 
-        let success = $("<p>");
+        let success = $("&lt;p>");
         success.text("Addition successful");
         success.css("color", "green");
         $(form).append(success);
@@ -259,7 +287,7 @@ function checkFormat(name) {
             $(".phone").children('p').remove();
             let regexPhone = /^.{1,25}$/;
             if (!regexPhone.test($(phone).val())) {
-                let error = $("<p>");
+                let error = $("&lt;p>");
                 error.text("Wrong entry, you must enter a valid phone number of less than 25 characters");
                 error.css("color", "red");
                 $(".phone").append(error);
@@ -269,7 +297,7 @@ function checkFormat(name) {
             $(".zip_code").children('p').remove();
             let regexZipCode = /^.{1,5}$/;
             if (!regexZipCode.test($(zip_code).val())) {
-                let error = $("<p>");
+                let error = $("&lt;p>");
                 error.text("Wrong entry, you must enter a valid zip code of less than 6 characters");
                 error.css("color", "red");
                 $(".zip_code").append(error);
@@ -279,7 +307,7 @@ function checkFormat(name) {
             $(".state").children('p').remove();
             let regexState = /^.{1,10}$/;
             if (!regexState.test($(state).val())) {
-                let error = $("<p>");
+                let error = $("&lt;p>");
                 error.text("Wrong entry, you must enter a valid state number of less than 11 characters");
                 error.css("color", "red");
                 $(".state").append(error);
@@ -291,7 +319,7 @@ function checkFormat(name) {
             $(".model_year").children('p').remove();
             let regexYear = /^(?:[0-9]{1,4}|10000)$/;
             if (!regexYear.test($(model_year).val())) {
-                let error = $("<p>");
+                let error = $("&lt;p>");
                 error.text("Wrong entry, you must enter a valid year of type YYYY");
                 error.css("color", "red");
                 $(".model_year").append(error);
@@ -301,7 +329,7 @@ function checkFormat(name) {
             $(".list_price").children('p').remove();
             let regexPrice = /^\d{1,5}(?:\.\d{2})?$/;
             if (!regexPrice.test($(list_price).val())) {
-                let error = $("<p>");
+                let error = $("&lt;p>");
                 error.text("Wrong entry, you must enter a valid price of type Number.Number");
                 error.css("color", "red");
                 $(".list_price").append(error);
@@ -313,7 +341,7 @@ function checkFormat(name) {
             $(".quantity").children('p').remove();
             let regexQuantity = /^-?\d+$/;
             if (!regexQuantity.test($(quantity).val())) {
-                let error = $("<p>");
+                let error = $("&lt;p>");
                 error.text("Wrong entry, you must enter a valid quantity (an integer)");
                 error.css("color", "red");
                 $(".quantity").append(error);
@@ -325,3 +353,26 @@ function checkFormat(name) {
     }
     return true;
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addContentToDatabase">addContentToDatabase</a></li><li><a href="global.html#addEmployeeOption">addEmployeeOption</a></li><li><a href="global.html#checkFill">checkFill</a></li><li><a href="global.html#checkFormat">checkFormat</a></li><li><a href="global.html#clientLogin">clientLogin</a></li><li><a href="global.html#deleteContent">deleteContent</a></li><li><a href="global.html#displayItemList">displayItemList</a></li><li><a href="global.html#employeeLogin">employeeLogin</a></li><li><a href="global.html#getCookie">getCookie</a></li><li><a href="global.html#getEmployeesList">getEmployeesList</a></li><li><a href="global.html#getStoreData">getStoreData</a></li><li><a href="global.html#getUserLocation">getUserLocation</a></li><li><a href="global.html#initializeMap">initializeMap</a></li><li><a href="global.html#selectItemChange">selectItemChange</a></li><li><a href="global.html#selectStoreChange">selectStoreChange</a></li><li><a href="global.html#selectTypeChange">selectTypeChange</a></li><li><a href="global.html#singular">singular</a></li><li><a href="global.html#sortTable">sortTable</a></li><li><a href="global.html#storeData">storeData</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Apr 18 2024 16:39:57 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

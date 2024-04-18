@@ -1,5 +1,8 @@
-
-//Get the value of attribute "name"
+/**
+ * Function to retrieve the value of a cookie by its name.
+ * @param {string} name - The name of the cookie.
+ * @returns {string|null} The value of the cookie if found, otherwise null.
+ */
 function getCookie(name) {
     let cookies = document.cookie.split(';');
     for (let cookie of cookies) {
@@ -11,7 +14,10 @@ function getCookie(name) {
     return null;
 }
 
-//Sort function for tables
+/**
+ * Function to sort the rows of a table based on the content of a specific column.
+ * This function is intended to be used as an event handler for sorting tables.
+ */
 function sortTable(){
 
     var table = $(this).closest('table');
