@@ -1,0 +1,16 @@
+.full-height {
+    height: 100vh;
+  }
+
+table th:hover {
+  cursor: pointer;
+}
+
+button {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+select {
+  margin-top: 6px;
+}
